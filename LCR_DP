@@ -23,7 +23,17 @@ int LCSLength(char X[],int m,char Y[],int n){
     }
     return LCS[0][0];
 }
-
+void printLCS(char X[]){
+    int z=LCS[0][0],i=0,j=0;
+    while(z!=0)
+    {
+       z=max(max(LCS[i][j+1],LCS[i+1][j+1]),max(LCS[i+1][j],LCS[i+1][j+1]));
+       if(LCS[i][j+1]==z){ j=j+1;cout<<X[i];}
+       else if(LCS[i+1][j+1]==z){ i=i+1;j=j+1;cout<<X[i];}
+       else if(LCS[i+1][j]==z) {  i=i+1;cout<<X[i];}
+       
+    }
+}
 int main(){
     
     char X[] ={'A','B','C','B','D','A','B'};
@@ -36,4 +46,6 @@ int main(){
     }    
         cout<<endl;
     }
+    
+    printLCS(X);
 }
