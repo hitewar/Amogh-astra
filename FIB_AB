@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+//Only by using two variable a,b 
+
+int fibonacci(int n){
+    int a=1,b=0,sum;
+   for(int i=0;i<n;i++){
+       sum=a+b;
+       b=a;
+       a=sum;
+       
+   }
+   return sum;
+}
+
+int main() {
+   cout<<fibonacci(5);
+  
+	// your code goes here
+	return 0;
+}
