@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+int LCS[20][20];
+int LCSLength(char X[],int m,char Y[],int n){
+    for(int i=0;i<=m;i++)
+    LCS[i][n]=0;
+    for(int i=0;i<=n;i++)
+    LCS[m][i]=0;
+    
+    for(int i=m-1;i>=0;i--){
+        for(int j=n-1;j>=0;j--){
+            LCS[i][j]=LCS[i+1][j+1];
+            if(X[i]==Y[j]){
+                LCS[i][j]++;
+            }
+            if(LCS[i+1][j]>LCS[i][j])
+             LCS[i][j]=LCS[i+1][j];
+            if(LCS[i][j+1]>LCS[i][j])
+             LCS[i][j]=LCS[i][j+1]; 
+             
+            
+        }
+    }
+    return LCS[0][0];
+}
+
+int main(){
+    
+    char X[] ={'A','B','C','B','D','A','B'};
+    char Y[] ={'B','D','C','A','B','A'};
+    cout<<LCSLength(X,sizeof(X)/sizeof(char),Y,sizeof(Y)/sizeof(char));
+    for(int i=0;i<=sizeof(X)/sizeof(char);i++){
+    for(int j=0;j<=sizeof(X)/sizeof(char);j++){
+        
+        cout<<"\t"<<LCS[i][j];
+    }    
+        cout<<endl;
+    }
+}
