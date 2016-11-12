@@ -1,0 +1,31 @@
+#include<iostream>
+
+using namespace std;
+
+int max(int m,int n){
+    
+    if(m>n) return m;
+    else return n;
+}
+int LCSLength(char X[],int i,int m,char Y[],int j,int n){
+    if(i==m||j==n){
+                return 0;
+    }
+    else if(X[i]==Y[j]){
+    
+    return 1+LCSLength(X,i+1,m,Y,j+1,n);
+        
+    }
+    else 
+    return max(LCSLength(X,i,m,Y,j+1,n) , LCSLength(X,i+1,m,Y,j,n)); 
+    
+}
+
+
+int main(){
+    char X[] ={'A','B','C','B','D','A','B'};
+    char Y[] ={'B','D','C','A','B','A'};
+    cout<<LCSLength(X,0,sizeof(X)/sizeof(char),Y,0,sizeof(Y)/sizeof(char));
+    
+    
+}
