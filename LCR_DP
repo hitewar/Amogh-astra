@@ -1,3 +1,5 @@
+//Longest Common Sequence using Dynamic programming
+
 #include<iostream>
 using namespace std;
 int LCS[20][20];
