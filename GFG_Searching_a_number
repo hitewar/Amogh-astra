@@ -1,4 +1,6 @@
 #code
+#Given an array of N elements and a integer K , return the position of first occurence of K in given array.  Position of first element is considered as 1.
+#Output -1 if the number is not found in an array.
 T=int(input())
 for i in range(1,T+1):
     N=int(input())
