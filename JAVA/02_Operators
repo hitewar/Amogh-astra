@@ -1,0 +1,92 @@
+#01. Assignment, Postincrement and PreIncrement
+package com.dataflair.tutorials;
+public class DemoTest {
+	public static void main(String args[]) {
+    int k;//Declaration
+    k=5; //Assignment
+    k=k+1;//Increment
+    System.out.println(k);
+    
+    //Post-increment
+    k=5; //Assignment
+    k++;//postIncrement
+    System.out.println(k);
+    System.out.println(k++); //assigned then later incremented
+    
+    //Pre-increment
+    k=5; //Assignment
+    ++k;//preIncrement
+    System.out.println(k);
+    System.out.println(++k);  //incremented then assigned
+	}
+
+}
+#########################################################
+#02. Relational Operators
+#Code Start#
+    //Check for condition
+		int i,j;
+		i=4;
+		j=6;
+		System.out.println(i<j);  //less than  operator
+		boolean b=i>j;  
+		System.out.println(b);   //greater than operator
+		// < > <= >= != 
+#Code Finish#
+
+#########################################################
+#03. Conditional Operators
+#Code Start#
+    //Check for condition to check if relation satisfy and then do some job
+		int i,j;
+		i=4;
+		j=6;
+		if (i<6 && j<6 )  //AND relational operator
+		{
+			System.out.println("Hello");
+		}else
+		{
+			System.out.println("Hi");
+		}
+		
+		// && AND  || OR 
+#Code Over#
+
+#########################################################
+#04. Bitwise Operators
+#Code Start#
+     //Bit level operation
+		int i=5; //1 0 1
+		int j=6; //1 1 0
+		         //1 1 1
+		int k=i|j; // bitwise and operation
+		System.out.println(k);
+		
+		i=5; //1 0 1
+		j=4; //1 0 0
+		         //1 0 1  --5
+		k=i|j; // bitwise and operation
+		System.out.println(k);
+		
+		// Bitwise OR- | Bitwise AND- &
+#Code finish#
+#########################################################
+#05. Left Shift and Right Shift
+#Code Start#
+		//Bit shifting
+		//Right Shift
+		int n=4;     //         1 0 0.  4
+		n=n << 2 ;   //     1 0 0 0 0. 16
+		System.out.println(n);
+		n=4;
+		n=n << 4 ;   // 1 0 0 0 0 0 0. 64
+		System.out.println(n);
+		
+		//Left Shift
+		n=n >> 1 ;   // 0 1 0 0 0 0 0. 32
+		System.out.println(n);
+#Code Over#
+
+
+
+
