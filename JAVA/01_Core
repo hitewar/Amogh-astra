@@ -1,0 +1,98 @@
+#01.Introdunction
+
+Wy Java?
+Opensourse- Hadoop,PHP,HTML
+Community - Lots of supportsand
+Framework - Hyper-net,Spring,struts
+JVM    -  Platform independent bcz of JVM
+Applet - web entity , you can make web game 
+Pointer-less - Doesn't work directly on machine, it works virtually
+IDE - Eclipse 
+Multi-platform
+
+Java code in background 
+JDK:java development kit
+JRE:java runtime environment
+JVM:Java virtual machine
+1)Java Code (.java) 
+2)JAVAC complier
+3)Byte Code (.class)
+4)a)JVM     b)JVM   c)JVM    
+5)a)Windows b)Linux c)Mac
+
+Packge comes in market are like this [JDK,[JRE,[JVM]]]
+
+###########################################################
+#02.Sofware required
+1.a Notepad and compile in JRE(by default in system..java - .class) and JDK(.class .byte) 
+1.b Java developer in Eclipse
+2.MySql 
+
+###########################################################
+#03.FirstCode
+#Code Start#
+package com.dataflair.tutorials;
+
+public class DemoTest {
+	public static void main(String args[]) {
+		/*static: it doesn't require method to call this object
+		 * 
+		 * String args:Obejct input arguments
+		 */
+		
+		System.out.print("Hello");
+		/* Here print is non-static method 
+		 * but out is predefined class which is an static object 
+		 */
+		
+	}
+
+}
+#Code Over#
+
+###########################################################
+#04.Variables
+
+1)Variables come in two flavours: primitive and reference 
+2)variables must have a type
+3)variables must have a name
+
+Example:
+int count;
+int: type of variable
+count : name of variable
+
+4)Primitive Types
+a)boolean and char
+  - boolean (JVM specific) true or false
+  - char 16 bits 0 to 65536
+b) Numeric(all are signed)
+  - Integer
+   a)byte   8 bits : -128 to 127
+   b)short 16 bits : -32768 and 32767
+   c)int   32 bits : -2147483648 to 2147483647
+   d)Long  64 bits : -huge to huge
+c) Floating Point
+   - float 32 bits varies
+   - double 64 bits varis   #all decimal values are default double
+  
+5)Variable Name
+ Name should not be keyword and not start with special characters
+ Should start with variable
+###########################################################
+#05.Variables and Practical
+#Code Start#
+		int num1 = 5; //declared and initialized
+		int num2 = 4; //declared and initialized
+		int result = num1 +num2 ;//declared and expression is initialized
+		System.out.println(5+4);
+		System.out.println("The addition is:"+num1+num2);
+		System.out.println("The addition is:"+ (num1+num2));
+		System.out.println(result);
+ #Code Finish#
+ 
+ 
+
+
+
+
