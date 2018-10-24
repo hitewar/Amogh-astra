@@ -28,6 +28,28 @@ EADIP
 				+ "\n s1.student_name: "+ s1.student_name + "\n \nPrivate variables:\n"
 				+" getP_rollnumber(): " + s1.getP_rollnumber()+ " \n getP_studentname(): "
 				+ s1.getP_studentname());
+----------------
+class Student{
+	int rollnumber;
+	String student_name;
+	
+	private int p_rollnumber;
+	private String p_studentname;
+	public int getP_rollnumber() {
+		return p_rollnumber;
+	}
+	public void setP_rollnumber(int p_rollnumber) {
+		this.p_rollnumber = p_rollnumber;
+	}
+	public String getP_studentname() {
+		return p_studentname;
+	}
+	public void setP_studentname(String p_studentname) {
+		this.p_studentname = p_studentname;
+	}
+	
+}
+----------------
 #Code End#
 ####################################
 # 04: Abstraction Theory
