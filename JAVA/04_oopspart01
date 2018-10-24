@@ -1,0 +1,41 @@
+#01: Basics
+Obeject Oriented Programming System (To do any task you need an object)
+- Classes  (iphone Brand : Blueprint)
+- Object   (iphone X:Actual entity you can work with having objectives using methods)
+- Encapsulation ()
+- Abstraction
+- Data Hiding
+- Inheritance
+- Polymorphism
+EADIP
+###############################
+# 02: Encapsulation Theory
+- Data should be by default private and to use them you should have methods.
+- Shouldn't have direct acces of your variables to outside world.
+- Use getter(fetch data from variable) and setter(set the data of variable)
+###############################
+#03: Encapsulation Practical
+#Code Start#
+     // Encapsulation :Binding your variables with methods.
+		Student s1 = new Student();
+		s1.rollnumber = 5;
+		s1.student_name="Hitesh";
+		// Here i have direct access to this variables
+		s1.setP_rollnumber(5);
+		s1.setP_studentname("Hitesh");
+		
+		System.out.println("Public variable:\n s1.rollnumber: " + s1.rollnumber 
+				+ "\n s1.student_name: "+ s1.student_name + "\n \nPrivate variables:\n"
+				+" getP_rollnumber(): " + s1.getP_rollnumber()+ " \n getP_studentname(): "
+				+ s1.getP_studentname());
+#Code End#
+####################################
+# 04: Abstraction Theory
+#Code Start#
+- Fetching all the properties of an entity
+- Generalication of entity ,Going for specialization
+- Ex. Car(Class)-> a)Mercedes b)Audi (Objects)
+#Code End#
+
+
+
