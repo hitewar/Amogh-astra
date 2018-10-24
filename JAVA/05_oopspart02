@@ -1,0 +1,136 @@
+# 06: Object Example 01
+#Code Start#
+  // Object 
+  // For adding  two number i need a calculator so i will create a classcalculatoer
+	//Class name, reference object,implementation of space,how much memory
+	Add obj = new Add();
+	obj.num1= 5;
+	obj.num2=6;
+	obj.sum();
+	System.out.println("Sum of num1 & num2 :" + obj.result);
+--------------
+class Add{
+	int num1;
+	int num2;
+	int result;
+	public void sum() {
+		result=num1+num2;
+	}
+--------------
+#Code End#
+
+##########################
+# 07: Object Example 02
+#Code Start#
+	Add obj = new Add();
+	obj.sum(5,6);
+-------------
+class Add{
+	int num1;
+	int num2;
+	int result;
+	public void sum(int n1, int n2){
+		num1 =n1;
+		num2 =n2;
+		result=num1+num2;
+		System.out.println("Sum of num1 & num2 :" + result);
+		}
+}
+-------------
+#Code End#
+##########################
+# 08: Object Example 03
+#Code Start#
+	// Simplifying your task into smaller parts helps to add and scale your application
+ 	Add obj = new Add();
+ 	obj.seValues(5, 6);
+ 	obj.sum();
+	obj.showResult();
+	obj.sub();
+	obj.showResult();
+	}
+---------------
+class Add{
+	private int num1;
+	private int num2;
+	private int result;
+	public void seValues(int n1, int n2) {
+		num1 =n1;
+		num2 =n2;
+	}
+	public void sum(){
+		result=num1+num2;
+		}
+	public void sub(){
+		result=num1-num2;
+		}
+	public void showResult(){
+		System.out.println("Result is: " + result);
+	}
+}
+---------------
+#Code End#
+###########################
+# 09: This Keyword in java
+#Code Start#
+	public static void main(String args[]) {
+	//This Keyword in java
+ 	Add obj = new Add();
+ 	obj.setValues_Instance_Local(5, 6);
+ 	obj.sum();
+	obj.showResult();
+	obj.sub();
+	obj.showResult();
+	
+	}
+  -------------------------
+  	private int num1; // instance variable
+	private int num2; // instance variable
+	private int result; // instance variable
+	public void setValues(int n1, int n2) {// n1 & n2 are local variables
+		num1 =n1;
+		num2 =n2;
+	}
+	public void setValues_Instance_Local(int num1,int num2) {
+		/* num1 = num1; both of them are local variables so its value will be zero
+		 * num2 = num2; So it won't setup any value to instance variable num1 & num2
+		 * 
+		 * So we use this keyword to specify instance variables
+		 */
+		this.num1 = num1; 
+		this.num2 = num2;
+	}
+	
+	public void sum(){
+		result=num1+num2;
+		}
+	public void sub(){
+		result=num1-num2;
+		}
+	public void showResult(){
+		System.out.println("Result is: " + result);
+	}
+	
+}
+-------------------------
+###########################
+# 10: Inheritance Theory
+- When you design with inheritance, you put common code in a class and then
+  tell other more specific classes that the common(more abstract) class is their
+  superclass.
+- When one class inherits from another, the subclass inherits from the superclass.
+- subclass ectendes the superclass.
+- An inheriteance relationship means that the subclass inherits the members of the superclass.
+- subclass can add new methods and instance variables of its own, and it can override the methods it  
+  inherits from the superclass
+  
+  
+  Two types of inheritance
+  Is-A   "Dog is a animal" Extending the class Dog
+  Has-A  "Bathroom has a tub"  Extendign the feature of class Bathroom
+  
+  
+
+
+  
+#Code End#
