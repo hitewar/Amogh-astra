@@ -1,0 +1,147 @@
+# 21: Constuctor Overloading
+IMPLICIT CONVERSION
+int ->double
+float ->double
+#Start Code#
+	//Constructor Overriding.
+	new A();
+	new A(2);
+	new A(2.0);
+	new A(2.0f);
+------------------------
+class A{
+	public A() {System.out.println("In Default Constructor!!"); }
+	public A(int a) {System.out.println("In Integer Constructor!!"); }
+	public A(double a) {System.out.println("In Double Constructor!!"); }
+	public A(float a) {System.out.println("In Float Constructor!!"); }
+}
+------------------------
+#Start End#
+##############################
+# 22: Object Creation of super class using sub class object
+#Code Start#
+	// Object Creation of Super class using Sub class Object 
+	// Reference creation = Object Creation
+	// [reference class name] [reference object name] = new [Object]
+	System.out.println("X -> X");
+	X obj1 = new X();
+	System.out.println("Y -> Y");
+	//
+    Y obj2 = new Y();
+    obj2.show();
+    System.out.println("X -> Y");
+    //when you create object of subclass you get two objects from subclass and superclass
+    X obj3 = new Y();
+    obj3.show();
+-------------------------------
+ class X{
+	public X() {System.out.println("In  Constructor A!!"); }
+	public void show() {System.out.println("In  Show Constructor A!!"); }
+
+}
+class Y extends X{
+	public  Y() {System.out.println("In  Constructor B!!");}
+}
+-------------------------------
+#Code End#
+################################
+# 23: Object Creation of Super class using Sub class Object Part 2 using Super keyword
+- Objecct is a class which is extended by every class
+#Code Start#
+	// Object Creation of Super class using Sub class Object Part 2 using Super keyword 
+    X obj = new Y(5);
+    obj.show();
+	}
+-------------------------
+class X{
+	public X() {System.out.println("In  Constructor A!!"); }
+	public X(int a) {System.out.println("In  Integer Constructor A!!"); }
+	public void show() {System.out.println("In  Show Constructor A!!"); }
+
+}
+// In JVM it has default super method in subclass constructors 
+class Y extends X{
+	public  Y() {super(); //default constructor
+	System.out.println("In  Constructor B!!");}
+	public  Y(int a) {super(a);//parameterized constructor
+	System.out.println("In  Integer Constructor B!!");}
+	}
+-------------------------
+#Code End#
+###################################
+# 24: Super Keyword
+#Code Start#
+	// Object Creation of Super class using Sub class Object Part 2 using Super keyword 
+	//super is a keyword used to access the methods and variables from nearest parent class
+    X obj = new Y();
+    obj.show();
+------------------------------
+class X{
+	int i=10;
+	public void show() {System.out.println("Hello World from X!!"); }
+
+}
+
+class Y extends X{
+	int i=5;
+	public void show() {
+		super.show();
+		System.out.println("Hello World from Y!!" + i); 
+		System.out.println("Hello World from Y!!" + super.i); 
+		}
+	}
+------------------------------
+#Code End#
+###################################
+# 25&26: Singleton Class
+#Start Code#
+	// Singleton Class  : Restrict class not to be created more than one object
+	// In singleton Class we use private constructor
+	//Create static method and object
+	A obj = A.getInstance();
+    obj.i =5;
+    obj.show();
+    A obj1 =A.getInstance();
+    obj1.i=10;
+    obj1.show();
+    obj.show();
+ ----------------------------
+ class A{
+	int i;
+	static A obj =new A();
+	private A() {}
+	public static A getInstance() {
+		return obj;
+	}
+	public void show() {
+		System.out.println(i);
+	}
+
+}
+----------------------------
+#End Code#
+################################################
+# 27:toString method
+#Code Start#
+	// tostring method
+		A obj =new A();
+		obj.i=4;
+		obj.sname="Hitesh";
+		//All the class have by extends object class and have tostring method
+		System.out.println(obj);
+--------------------------------
+
+class A{
+	int i;
+    String sname;
+    public String toString() {
+    	return i+" : "+sname+" Hashcode value:"+super.toString();
+    }
+
+}
+--------------------------------
+#Code End#
+
+
+
+
