@@ -1,0 +1,134 @@
+# 11: Inheritance 01 Single
+#Code Start#
+	//Inheritance
+	Calc obj = new Calc();
+ 	obj.setValues(5, 6);
+ 	obj.sum();
+	obj.showResult();
+	obj.setValues(10, 6);
+	obj.sub();
+	obj.showResult();
+-----------------
+class Add{
+	int i,j,k;
+	public void setValues(int a, int b) {
+		i=a;
+		j=b;
+	}
+	public void sum() {	
+		k = i+j;
+	}
+	public void showResult() {
+		System.out.println(k);
+	}
+}
+// Here i was not required to re-write all the methods used in Add class
+// instead i could use common non-private methods and instance variables 
+class Calc extends Add{
+	public void sub() {	
+		k = i-j;
+	}
+}
+-----------------
+#Code End#
+#####################
+# 12: Inheritance 02 Multilevel
+#Code Start#
+	//Inheritance Multilevel , Multiple inheritance is not supported in java
+	Addsubmul obj = new Addsubmul();
+ 	obj.setValues(5, 6);
+ 	obj.sum();
+	obj.showResult();
+	obj.sub();
+	obj.showResult();
+	obj.mul();
+	obj.showResult();
+------------------
+class Add{ //Base/Parent/Super Class
+	int i,j,k;
+	public void setValues(int a, int b) {
+		i=a;
+		j=b;
+	}
+	public void sum() {	
+		k = i+j;
+	}
+	public void showResult() {
+		System.out.println(k);
+	}
+}
+
+class Addsub extends Add{ // Child/Sub Class
+	public void sub() {	
+		k = i-j;
+	}
+}
+
+class Addsubmul extends Addsub{ // Child/Sub Class
+	public void mul() {	
+		k = i*j;
+	}
+}
+
+
+------------------
+#Code End#
+############################
+# 13: Costructor
+- Method name as class name and you can't call this explicitly
+#Code Start#
+	//Constructor
+	//This is a special method which is called automatically when object is created
+	Abc obj = new Abc();
+----------------------
+class Abc{
+	public Abc() { //JVM by default provide this 
+			System.out.println("In Contructor Abc");
+	}
+}
+----------------------
+#Code End#
+################################
+# 14: Anonymous Object 01
+#Code Start#
+	//Referenced  Object
+	Abc obj = new Abc();
+	obj.show();
+	//Anonymous Object
+	//If you have to call any method once then you should go for anonymous object
+	new Abc().show();
+	//First it calls the constructor then with help of it calls the method show
+--------------------------
+class Abc{
+public Abc() { //JVM by default provide this 
+		System.out.println("In Contructor Abc");
+		}
+public void show() {
+	System.out.println("Hello World");
+       }
+}
+--------------------------
+#Code End#
+#######################################
+# 15:Anonymous Object 02
+#Code Start#
+	Abc obj =new Abc();
+	obj.i =7;
+	obj.show();
+	//Anonymous Object 02
+	new Abc().i=8;
+	// It always create new object and calls a method or access variable once
+	// So, when you call the show method it prints 0
+	new Abc().show();
+---------------------
+class Abc{
+	int i;
+public void show() {
+	System.out.println(i);
+       }
+}
+---------------------
+#Code End#
+#######################################
+
+
