@@ -1,0 +1,99 @@
+# 16: Static and Non-static/Instance Method
+- In static function you can't use instance variable
+#Code Start#
+	//To call instance method you need to create an object/instance
+	Abc obj = new Abc();
+	obj.i=10;
+	obj.show();
+	//To access/call static variable/methods you don't need an object using constructor
+	//you can call them
+	Abc.static_i=20;
+	Abc.static_show();
+--------------------
+class Abc{
+	int i;//instance variable
+	public void show() {
+		System.out.println("Hello World!!");
+       }
+	
+	static int static_i;//Static variable
+	public static void static_show() {
+		System.out.println("Static Hello World!!");
+       }
+	
+}
+--------------------
+####################################################
+# 17: Polymorphism Theory (Multiple behaviour)
+Two Types
+- Overloading
+- Overloading
+# Overloading
+Methods overloading is nothing more than having two methods with the 
+same name but different argument lists.
+- The return types can be different
+- You can't change ONLY the return type.
+- You can vary the access levels in any direction.
+
+# Overriding
+- Overridden methods allow Java to support run-time polymorphism.
+- Polymophism is essential to oops for one reason
+  - It allows a general class to specify methods that will be common to of its derivatives
+  - while allowing subclasses to define the speccific implementation of some or 
+    all of those methods.
+- Overridden methods are another way that Java impements the
+"One interface,multiple methods"
+###############################################
+# 18: Method Overloading
+#Code Start#
+	//Method Overloading
+	Abc obj = new Abc();
+	obj.show(40);
+	obj.show(40.0);
+	obj.show(40.0f);
+--------------------
+class Abc{
+	public void show() {System.out.println("In Default Show!!"); }
+	public void show(int a) {System.out.println("In Integer Show!!"); }
+	public void show(double a) {System.out.println("In Double Show!!"); }
+	public void show(float a) {System.out.println("In Float Show!!"); }
+}
+--------------------
+#Code End#
+###############################################
+# 19: Method Overriding 01
+#Code Start#
+	//Method Overriding 01
+	B obj = new B();
+    obj.show();
+ ------------------------
+ class A{
+	public void show() {System.out.println("Hello world from A!!");}
+}
+class B extends A{
+	
+	public void show() {System.out.println("Hello world from B!!");}
+}
+------------------------
+#Code End#
+###############################################
+# 20: Method Overriding 02
+#Code Start#
+	//Method Overriding 02
+	// Look for same signature of method called if not found in sub class then 
+	// look into parent class and go on.
+	B obj = new B();
+  obj.show();
+	}
+-------------------------
+class A{
+	public void show() {System.out.println("Hello world from A!!");}
+}
+class B extends A{
+	public void show(int a) {System.out.println("Hello world from B!!");}
+}
+-------------------------
+
+#Code End#
+
+  
