@@ -1,0 +1,83 @@
+# 01 Do while Loop
+#Code Start#
+    // Do while loop
+		int i=1;
+		do 
+		{
+			System.out.println(i);
+			i++;
+		}while(i<=10);
+#Code End#
+################################
+# 02 For loop
+#Code Start#
+    // For loop
+	// initialization , condition ,increment or decrement
+		for(int i=1;i<=10;i++) {
+			System.out.println(i);
+			}
+#Code End#
+################################
+# 03 For loop
+#Code Start#
+Nothing Ineresting
+#Code End#
+
+################################
+# 04 Star Pattern
+#Code Start#
+     /* 
+      *  * * * *
+      *  * * * *
+      *  * * * *
+      *  * * * *
+      */
+		for(int i=1;i<=4;i++) {
+			
+			for(int j=1;j<=4;j++) {
+				System.out.print("* ");
+				}
+			System.out.println();
+			}
+#Code End#
+
+###############################
+# 05 Star Pattern part 02
+#Code Start#
+/* 
+      *  1 2 3 4
+      *  2 3 4 5
+      *  3 4 5 6
+      *  4 5 6 7
+      */
+		for(int i=1;i<=4;i++) {
+			
+			for(int j=1;j<=4;j++) {
+				// Important to put '(' & ')' otherwise it would interpret number as string  L to R
+				System.out.print((i+j-1) + " ");
+				}
+			System.out.println();
+			}
+#Code End#
+
+####################################
+# 06 Star Pattern part03
+#Code Start#
+     /* 
+      *  * * * *
+      *  *     *
+      *  *     *
+      *  * * * *
+      */
+		for(int i=1;i<=4;i++) {
+			
+			for(int j=1;j<=4;j++) {
+				if(i==1 || j==1 || i ==4 || j==4)
+					System.out.print("* ");
+				else
+					System.out.print("  ");
+					
+				}
+			System.out.println();
+			}
+#Code End#
