@@ -1,0 +1,60 @@
+# 06:Interface Theory : (Java doesn't allow multiple inheritance that stops to create 
+  use methods from two objects.)
+- A Java Interface solves your multiple inheritance problem by giving you 
+  much of the polymorphic benefits of multiple inheritance.
+- Using interface you can achieve multiple inheritance
+
+A Java interface is like a 100% pure abstract class
+ Ex:
+ 1) public interface pet{...}
+   - instead of the class keyword use "interface"
+   You can't instantiate interface class so you will have to impements them
+ 2) public class dog implements pet{...}
+   - Use the keyword "implements" followed by the interface name
+   
+   Class to Class        : extends
+   Interface to Class    : implements
+   Interface to Interface: extends
+##############################################
+# 07,08,09,10 : Interface Practical
+#Code Start#
+		//Abstract Class and Method Application
+		/* All the methods in interface class are public abstract
+		 * Use interface inheritance for multiple inheritance which  helps to access 
+		 * properties from more than one class
+		 */
+		AtmCumDebit  obj = new Card();
+		obj.atm();
+		obj.debit();
+---------------------------------------
+interface Atm{
+	void atm();
+}
+interface Debit{
+	void debit();
+}
+interface Credit{
+	void credit();
+}
+
+//Inheritance interface
+interface AtmCumDebit extends Atm,Debit{}
+interface AtmCumCredit extends Atm,Debit{}
+interface CreditCumDebit extends Credit,Debit{}
+interface AtmCumDebitCumCredit extends Atm,Debit,Credit{}
+
+class Card implements Atm,Debit,Credit,AtmCumDebit,AtmCumCredit,CreditCumDebit,AtmCumDebitCumCredit
+{   public void atm() {
+		System.out.println("ATM");
+	}
+	public void debit() {
+		System.out.println("DEBIT");
+	}
+	public void credit() {
+		System.out.println("CREDIT");
+	}
+
+}
+---------------------------------------
+   
+  
