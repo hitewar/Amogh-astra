@@ -1,0 +1,109 @@
+# 01:Inner Class Member 
+#Code Start#
+		//Inner Class
+		/* 1. Member
+		 * 2. Nested
+		 * 3. Anonymous
+		 */
+		//You need an object of B to access member function of B
+		//for that you need member class of A which is B which can be 
+		//accessed via creating object of A
+		A obj =new A();
+		obj.i=10;
+		System.out.println(obj.i);
+		A.B obj1 = obj.new B();
+		obj1.show();
+-----------------------------------
+class A{
+	int i;//Member Variable
+	class B{
+		public void show() 
+		{
+			System.out.println("Hello");
+		}
+	}
+}
+-----------------------------------
+#Code End#
+######################
+# 02 & 03 :Inner Class Member and Nested 
+#Code Start#
+		//Nested class (Inner class which is static)
+        // After compiling this program it creates three class files 
+		// DemoTest.class ,A.class ,A$B.class
+		// Here you can see that B is member class of A, you can't call
+		// B directly, you need help of object of Class A.
+		// IF you change the inner member class to static it becomes nested
+		// class.After that you can create it's object directly 
+    		A.B obj1 = new A.B();
+		    obj1.show();
+--------------------------------------
+class A{
+	static class B{ //Inner member Class
+		public void show() 
+		{
+			System.out.println("Hello");
+		}
+	}
+}
+--------------------------------------
+#Code End#
+#######################################
+# 04:Anonymous Class
+#Code Start#
+		//Anonymous Class
+		A obj =new A() {
+			public void show() {
+				System.out.println("My world!!");
+			}
+		};
+		obj.show();
+		
+		//Anonymous Object using anonymous class
+		new A() {
+			public void show() {
+				System.out.println("My Other world!!");
+			}
+		}.show();	
+ -------------------------------
+ class A{
+		public void show() 
+		{
+			System.out.println("Hello");
+		}
+}
+-------------------------------
+#Code End#
+#######################################
+# 05: Interface with Anonymous Class
+#Code Start#
+	 Pqr obj = new Pqr();
+	 obj.show();
+	 
+	 Abc obj1 = new Pqr();
+	 obj1.show();
+	 //We can't create object of interface because they don't have implementation 
+	 //but using anonymous class we can do that
+	 //It create class file as DemoTest$1.class
+	 
+	 Abc obj2 = new Abc() {
+		 public void show() {
+			 System.out.println("Hello World!!");
+		 }
+		};
+	 obj.show();
+	 System.out.println(obj.i);
+--------------------------------------
+
+interface Abc
+{   int i=10;
+	void show();
+}
+class Pqr implements Abc{
+	public void show() {
+		System.out.println("Hello World!!");
+	}
+}
+--------------------------------------
+#Code End#
+
