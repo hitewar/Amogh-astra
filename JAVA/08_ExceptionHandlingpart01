@@ -1,0 +1,42 @@
+// 01: Exception Handling Introdunction
+#Code Start#
+    //Exception Handling
+      try {
+		int i,j,k;
+		int z[]=new int[2];
+		z[0]=1;
+		z[1]=2;
+		i = 4;
+		j = 0;
+		k = i/j;
+		System.out.println(k);
+      }catch(ArithmeticException e){
+    	  System.out.println(e + ": You can't divide a number by zero!!");  
+      }catch(ArrayIndexOutOfBoundsException e) {
+    	  System.out.println(e + ": Maximum size of array is 2!!");
+      }catch(Exception e) {
+    	  System.out.println(e + ": Unknown Error");
+    	  e.printStackTrace();//This helps to debug the error
+      }
+      
+      System.out.println("Bye");
+
+    try {
+        int m,n;
+        System.out.println("Enter Two numbers:");
+        InputStreamReader is = new InputStreamReader(System.in);
+        BufferedReader br =new BufferedReader(is);
+		m=Integer.parseInt(br.readLine());
+		n=Integer.parseInt(br.readLine());
+		int o=m+n;
+		System.out.println("Result:"+o);
+		
+		
+	} catch (NumberFormatException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+#Code End#
