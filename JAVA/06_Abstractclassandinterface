@@ -1,0 +1,102 @@
+# 01: Abstract Class Theory
+- An abstract class means that nobody can ever make instance of that class
+- An abstract class has virtually* no use, no value,no purpose in life,unless
+  it is extended.
+  
+- Besides classes, you can mark methods Abstract.
+- An abstract class means the class must be extended;
+  an abstract method means the method must be overridden.
+  
+ An abstract method has no body!
+   Ex: 
+     public abstract void eat();
+     -no method body '{}'!
+     -End it with semicolon.
+     
+ If you declare an abstract method, you MUST mark the class abstract as well.You can't have an abstract
+ method in a non-abstract class.
+ - If you put even a single abstract method in a class, you have to make the 
+   class abstract.
+ - But you can mix both abstract and non-abstract methods in the abstract
+   class.
+ ######################################
+ # 02:Abstract Class and Method Introduction
+ #Code Start#
+ //class which has at least one abstract method is an abstract lcass
+abstract class X
+{
+	public void show() {
+		System.out.println("Hello World!!");
+	}
+	//Any method which is not defined but only declared is called abstract method
+	public abstract void magic();
+}
+#Code End#
+#######################################
+# 03: Abstract Class and Method In Detail
+#Code Start#
+		X obj = new Y();
+		obj.show();
+		obj.magic();
+-------------------
+//class which has at least one abstract method is an abstract lcass
+abstract class X
+{
+	public void show() {
+		System.out.println("Hello World!!");
+	}
+	//Any method which is not defined but only declared is called abstract method
+	//All the abstract method should be in public/protected so that you 
+	//go for extending.
+	public abstract void magic();
+}
+
+class Y extends X
+{//Overriding the magic method in child class
+	public void magic(){
+		System.out.println("Magicccccccc");
+	}
+}
+-------------------
+#Code End#
+######################################
+# 04 & 05: Abstract Class and Method Application
+#Code Start#
+		//Abstract Class and Method Application
+		/* Restrict creating instance of any class
+		 * 1)Abstract class
+		 * 2)Private Constructor
+		 * 
+		 * Restrict the user to specific method.
+		 * By giving reference of abstract class we restrict him to few methods declared in abstract class.
+		 */
+		Atm obj = new Card();
+		obj.atm();
+ --------------------------------
+ abstract class Atm{
+	public abstract void atm();
+}
+abstract class Debit{
+	public abstract void debit();
+}
+abstract class Credit{
+	public abstract void credit();
+}
+
+class Card extends Atm
+{   public void atm() {
+		System.out.println("ATM");
+	}
+	public void debit() {
+		System.out.println("DEBIT");
+	}
+	public void credit() {
+		System.out.println("CREDIT");
+	}
+
+}
+--------------------------------
+#Code End#
+######################################
+
+ 
