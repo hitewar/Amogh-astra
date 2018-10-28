@@ -1,0 +1,190 @@
+# 01:Thread Theory (allows to achieve multithread in java)
+smallest unit of process which uses some least resources.
+- A thread is separate 'thread of excecution'
+- In other words, a sparate call stack
+- A thread is java class that represents a thread
+- To mkae a thread make a Thread.
+
+#Creating a Thread
+- In the most general sense, you create a thread by instantiatin ga objexct
+  of type Thread.
+- Java defines two ways in which this can be accomplished:
+   - You can implement the Runnable interface.
+   - You can extend the Thread class, itself.
+########################################
+# 02:Sequential execution of process
+#Code Start#
+public class DemoTest {
+
+	public static void main(String args[]) {
+		//Thread : Smallest unit of process
+		A obj1 = new A();
+		B obj2 = new B();
+		obj1.show();
+		obj2.show();
+}
+}
+-----------------------------------
+class A  {
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process A");
+			
+		}
+	}
+}
+
+class B{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process B");
+			
+		}
+	}
+}
+-----------------------------------
+#Code End#
+########################################
+# 03:Multithreading Thread Class part 02
+#Code Start#
+		//Thread : Smallest unit of process
+		//MultiThreading
+		
+		//only run method won't achieve parallelism so use start 
+		//Also you need to understand  process scheduler of system
+		//which allocates some time to each thread
+		A obj1 = new A();
+		B obj2 = new B();
+		obj1.start();
+		obj2.start();
+--------------------------------------
+class A  extends Thread{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process A");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+    public void run() {
+    	show();
+    }
+}
+
+class B extends Thread{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process B");
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+    public void run() {
+    	show();
+    }
+}
+--------------------------------------
+#Code End#
+########################################
+# 04:MultiThreading Thread Methods part 03
+#Code Start#
+		//Thread : Smallest unit of process
+		//Name to your threads & Set priority 1-10 
+		A obj1 = new A();
+		obj1.setName(" Thread A");
+		obj1.setPriority(10);
+		
+		B obj2 = new B();
+		obj2.setName(" Thread B");
+		obj1.start();
+		Thread.sleep(500);
+		obj2.start();
+----------------------------------
+class A  extends Thread{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process A" + getName()+" "+getPriority());
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+    public void run() {
+    	show();
+    }
+}
+
+class B extends Thread{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process B"+ getName() +" "+getPriority());
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+    public void run() {
+    	show();
+    }
+}
+----------------------------------
+#Code End#
+####################################
+# 05: MultiThreading Runnable Intro part 04
+#Code Start#
+	public static void main(String args[]) throws InterruptedException {
+		//We can't set a class as child of any class as well Thread..Basically Java doesn't allow multiple inheritance
+		//So you need to use runnable interface
+		A obj1 = new A();
+		obj1.run();
+-----------------------------------------------
+class X
+{
+	
+}
+
+class A  extends X implements Runnable{
+	public void show() {
+		for(int i=0;i<5;i++) 
+		{
+			System.out.println("Process A" );
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+		}
+	}
+
+	public void run() {
+    	show();
+    }
+}
+-----------------------------------------------
+#Code End#
