@@ -1,0 +1,83 @@
+# 06: Excception Handling Try catch finally Block
+#Code Start#
+		//You should close buffer reader So learn use of Finally block
+		BufferedReader br=null;
+	    try {
+	        int m,n;
+	        System.out.println("Enter Two numbers:");
+	        br =new BufferedReader(new InputStreamReader(System.in));
+			m=Integer.parseInt(br.readLine());
+			n=Integer.parseInt(br.readLine());
+			int o=m/n;  
+			System.out.println("Result:"+o);
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch(Exception e) {
+			System.out.println("Unknown Exception");
+		
+		} finally {//It will run anyway try block throws error
+			try {
+				br.close();
+				System.out.println("Resource Released");
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}	    
+			
+		}
+#Code End#
+################################################
+# 07: Excception Suppression using Throws Keyword
+#Code Start#
+	public static void main(String args[]) throws IOException{
+		//Exception Suppression using the keyword throws
+		String s ="";
+		try 
+		{   System.out.println("Enter a string!!");
+			BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
+			s = br.readLine();
+			System.out.println(s);			
+		}
+		finally {
+		}
+}
+
+#Code End#
+################################################
+# 08 & 09:Exception Handling User Defined Exception 
+#Code Start#
+		//Exception Handling User Defined Exception Part 01 
+		//POJO Plain old java object/not extending any java objects
+		try {
+        int i ,j,k;
+        i=9;
+        j=4;
+        k=i/j;
+        if(k==1) {
+        	throw new ArithmeticException("Answer can not be one!!");
+        }
+        
+        if(k==2) {
+        	throw new MyException("Answer can not be Two!!");
+        }
+        System.out.println(k);
+        
+        }
+		catch(Exception e){
+			System.out.println(e);
+		}
+----------------------------------
+class MyException extends Exception{
+	public MyException() 
+	{
+		
+	}
+	public MyException(String msg)
+	{
+		super(msg);
+	}
+}
+----------------------------------
+#Code End#
