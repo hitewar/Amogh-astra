@@ -1,0 +1,37 @@
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    t = int(input().strip())
+
+    for t_itr in range(t):
+        n = int(input().strip())
+        board = []
+        for _ in range(n):
+            board.append(list(map(int, input().rstrip().split())))
+
+        result = solve(board)
+        fptr.write(result + '\n')
+    fptr.close()
+    
+#!/bin/python3
+
+import sys
+
+def feeOrUpfront(n, k, x, d, p):
+    penalty = 0.0
+    for pi in p:
+        penalty = penalty + max(1.0*k,0.01*x*pi)
+        if penalty>d:
+            return "upfront"
+    return "fee"
+
+if __name__ == "__main__":
+    q = int(input().strip())
+    for a0 in range(q):
+        n, k, x, d = input().strip().split(' ')
+        n, k, x, d = [int(n), int(k), int(x), int(d)]
+        p = list(map(int, input().strip().split(' ')))
+        result = feeOrUpfront(n, k, x, d, p)
+        print(result)
+ 
+ 
