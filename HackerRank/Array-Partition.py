@@ -2,9 +2,6 @@
 
 import math
 import os
-import random
-import re
-import sys
 
 # Complete the solve function below.
 def solve(a):
@@ -13,15 +10,12 @@ def solve(a):
     [a.remove(1) for i in range(num_1)]
 
     for i in sorted(a):
-        #print("TEST: ",i)
-        #print("empty_list: ",empty_list)
         index_list=[]
         for m in empty_list:
             for n in m:
                 if math.gcd(i,n)!=1:
                     index_list.append(m)
                     break
-        #print("index_list: ",index_list)
         if len(index_list)==0:
             empty_list.append([i])
         else:
@@ -29,15 +23,13 @@ def solve(a):
             for j in index_list:
                 temp = temp + j
             temp.append(i)
-            #print("temp_list: ",temp)
             empty_list[empty_list.index(index_list[0])] = sorted(temp)
             for k in index_list[1:]:
                 empty_list.remove(k)
-        #print("empty_list: ",empty_list)
     if (num_1+len(empty_list))==1:
         return 0
     else:
-        return int((math.pow(2,num_1+len(empty_list))-2)%(math.pow(10,9)+ 7))
+        return int((math.pow(2,num_1+len(empty_list)))%(math.pow(10,9)+ 7)) -2
 
         
 
