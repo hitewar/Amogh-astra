@@ -1,0 +1,39 @@
+1) Longest Span with same Sum in two Binary array (https://www.youtube.com/watch?v=xtfj4-r_Ahs&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p)
+
+2) Union and Intersection of two sorted array(https://www.youtube.com/watch?v=EQQp4B_CU5Q&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=2)
+
+3) Find the Missing Number (https://www.youtube.com/watch?v=lBk6fVhuCyw&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=3)
+XOR methods:
+X1 = A1 ^ A3
+X2 = A1 ^ A2 ^ A3
+X1 ^ X2 = (A1 ^ A2) ^ (A1 ^ A2 ^ A3)
+        = (A1 ^ A1) ^ A2 ^ (A3 ^ A3)
+        = A2
+
+4) Find the minimum distance b/w two numbers (https://www.youtube.com/watch?v=hoceGcqQczM&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=4)
+
+5) Leaders in an array? (https://www.youtube.com/watch?v=NyRZm1pzNmQ&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=5)
+
+6) Majority Element? (https://www.youtube.com/watch?v=uwogtyFiDLg&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=6)
+METHOD 01 (Basic)			O(n*n)
+METHOD 02 (Using BST)		BST: O(n*n)
+METHOD 03 (Using Moore's Algorithm)  O(n)
+
+7) Find the number occuring odd number of times (https://www.youtube.com/watch?v=hySR1exD5PE&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=7)
+
+8) Replace every element with the greatest element on right side (https://www.youtube.com/watch?v=bLb8e83OK7o&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=8)
+
+9) Find a fixed point in a given array? (https://www.youtube.com/watch?v=hASRzBXY5kY&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=9)
+METHOD 03 - ???????????
+
+10) Find a peak element? (https://www.youtube.com/watch?v=NFvAD5na5oU&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=10)
+
+METHOD 02 - ???????????
+11) Count strictly increasing subarrays(https://www.youtube.com/watch?v=eMuC2LCoMvU&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=11)
+
+13) If there is any pythagorean triplet in given array return True (https://www.youtube.com/watch?v=oNtexwxSZ3s&list=PLqM7alHXFySEQDk2MDfbwEdjd2svVJH9p&index=13)
+
+
+
+
+
