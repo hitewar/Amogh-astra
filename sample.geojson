@@ -1,0 +1,41 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [73.847778, 18.523631],
+            [73.856743, 18.52043],
+            [73.867, 18.51571],
+            [73.847778, 18.523631]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "Maharashtra",
+        "iso_code": "MH"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [88.363895, 22.572646],
+            [88.351629, 22.574319],
+            [88.33149, 22.585357],
+            [88.363895, 22.572646]
+          ]
+        ]
+      },
+      "properties": {
+        "name": "West Bengal",
+        "iso_code": "WB"
+      }
+    }
+  ]
+}
